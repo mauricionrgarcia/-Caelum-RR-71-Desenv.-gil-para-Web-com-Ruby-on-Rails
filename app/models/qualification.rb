@@ -1,4 +1,8 @@
 class Qualification < ApplicationRecord
+
+  belongs_to :client
+  belongs_to :restaurant
+
   validates_presence_of :note, message: "note can't be blank"
   validates_uniqueness_of :amount_spent, message: 'amount spent already registered'
 
@@ -8,4 +12,7 @@ class Qualification < ApplicationRecord
 
   validates_numericality_of :amount_spent, greater_than: 0, message: 'amount spent must be a number greater than 0'
 
+  # => validações das assocações
+  validates_presence_of :client_id, :restaurant_id
+  validate_associated :client, :restaurant
 end
