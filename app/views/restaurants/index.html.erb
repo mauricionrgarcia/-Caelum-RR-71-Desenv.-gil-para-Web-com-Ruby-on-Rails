@@ -1,0 +1,28 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Specialty</th>
+  </tr>
+  <% @restaurants.each do |r| %>
+    <tr>
+      <td><%= r.name      %></td>
+      <td><%= r.address   %></td>
+      <td><%= r.specialty %></td>
+      <td>
+        <%= link_to 'Show', action: 'show', id: r %>
+      </td>
+      <td>
+        <%= link_to 'Delete', {action: 'destroy', id: r},
+                              {method: 'delete' } %>
+      </td>
+      <td>
+        <%= link_to 'Edit', action: 'edit', id: r %>
+      </td>
+
+    </tr>
+  <% end %>
+</table>
+
+<br />
+<%= link_to 'New', {action: 'new'} %>

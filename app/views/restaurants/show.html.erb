@@ -1,0 +1,16 @@
+<h1>
+  <p>Name: </p>
+  <%= @restaurant.name %>
+</h1>
+
+<p>
+  <b>Address:</b>
+  <%= @restaurant.address %>
+</p>
+<p>
+  <b>Specialty: </b>
+  <%= @restaurant.specialty %>
+</p>
+
+<%= link_to 'Back', action: 'index' %>
+<%= link_to 'Edit', action: 'edit', id: @restaurant %>
