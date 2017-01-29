@@ -5,9 +5,20 @@ class Restaurant < ApplicationRecord
   has_and_belongs_to_many :dishes
 
   # Named Scopes
-  scope :pasta, where(specialty: 'pasta')
-  scope :recently, where(["created_at > ?", 3.months.ago])
-  scope :orger_by_name, order('name')
+  #scope :pasta, where(specialty: 'pasta')
+  scope :pasta, -> {
+    where(specialty: 'pasta')
+  }
+  #scope :recently, where(["created_at > ?", 3.months.ago])
+  scope :recently, -> {
+    where(["created_at > ?", 3.months.ago])
+  }
+
+  #scope :order_by_name, order('name')
+  scope :order_by_name, -> {
+    order('name')
+  }
+
   # => validações
 
   validates_presence_of :name, message: "value can't be blank"
