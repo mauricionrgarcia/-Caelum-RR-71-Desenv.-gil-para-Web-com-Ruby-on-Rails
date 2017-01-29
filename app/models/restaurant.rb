@@ -28,11 +28,11 @@ class Restaurant < ApplicationRecord
   validates_uniqueness_of :name, message: 'name already registered'
   validates_uniqueness_of :address, message: 'address already registered'
 
-  validate :first_char_should_be_uppercase
+  validate :first_char_should_be_uppercase, :on => [ :create, :update ]
 
   private
   def first_char_should_be_uppercase
-    errors.add(:name, 'First character should be uppercase') unless name =~ /[A-Z].*/
+    errors.add(:name, 'First character should be uppercase') unless (0 == (name =~ /[A-Z].*/))
   end
 
 end
