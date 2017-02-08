@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Qualifications</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Client</th>
+      <th>Restaurant</th>
+      <th>Note</th>
+      <th>Amount spent</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @qualifications.each do |qualification| %>
+      <tr>
+        <td><%= qualification.client_id %></td>
+        <td><%= qualification.restaurant_id %></td>
+        <td><%= qualification.note %></td>
+        <td><%= qualification.amount_spent %></td>
+        <td><%= link_to 'Show', qualification %></td>
+        <td><%= link_to 'Edit', edit_qualification_path(qualification) %></td>
+        <td><%= link_to 'Destroy', qualification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Qualification', new_qualification_path %>

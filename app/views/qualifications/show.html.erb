@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @qualification.client_id %>
+</p>
+
+<p>
+  <strong>Restaurant:</strong>
+  <%= @qualification.restaurant_id %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @qualification.note %>
+</p>
+
+<p>
+  <strong>Amount spent:</strong>
+  <%= @qualification.amount_spent %>
+</p>
+
+<%= link_to 'Edit', edit_qualification_path(@qualification) %> |
+<%= link_to 'Back', qualifications_path %>

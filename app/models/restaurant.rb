@@ -6,8 +6,8 @@ class Restaurant < ApplicationRecord
 
   # Named Scopes
   #scope :pasta, where(specialty: 'pasta')
-  scope :pasta, -> {
-    where(specialty: 'pasta')
+  scope :massas, -> {
+    where(specialty: 'massas')
   }
   #scope :recently, where(["created_at > ?", 3.months.ago])
   scope :recently, -> {
@@ -30,9 +30,13 @@ class Restaurant < ApplicationRecord
 
   validate :first_char_should_be_uppercase, :on => [ :create, :update ]
 
-  private
+  #private
   def first_char_should_be_uppercase
     errors.add(:name, 'First character should be uppercase') unless (0 == (name =~ /[A-Z].*/))
+  end
+
+  def to_s
+    name << address
   end
 
 end
