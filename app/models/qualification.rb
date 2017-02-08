@@ -14,5 +14,5 @@ class Qualification < ApplicationRecord
 
   # => validações das assocações
   validates_presence_of :client_id, :restaurant_id
-  validate_associated :client, :restaurant
+  validates_associated :client, :restaurant
 end
