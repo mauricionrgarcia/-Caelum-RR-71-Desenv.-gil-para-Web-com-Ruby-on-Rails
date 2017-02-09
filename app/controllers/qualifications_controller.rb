@@ -1,5 +1,6 @@
 class QualificationsController < ApplicationController
   before_action :set_qualification, only: [:show, :edit, :update, :destroy]
+  before_action :recover_values_for_qualitication, only: [:new, :edit]
 
   # GET /qualifications
   # GET /qualifications.json
@@ -31,6 +32,7 @@ class QualificationsController < ApplicationController
         format.html { redirect_to @qualification, notice: 'Qualification was successfully created.' }
         format.json { render :show, status: :created, location: @qualification }
       else
+        recover_values_for_qualitication
         format.html { render :new }
         format.json { render json: @qualification.errors, status: :unprocessable_entity }
       end
@@ -45,6 +47,7 @@ class QualificationsController < ApplicationController
         format.html { redirect_to @qualification, notice: 'Qualification was successfully updated.' }
         format.json { render :show, status: :ok, location: @qualification }
       else
+        recover_values_for_qualitication
         format.html { render :edit }
         format.json { render json: @qualification.errors, status: :unprocessable_entity }
       end
@@ -59,6 +62,12 @@ class QualificationsController < ApplicationController
       format.html { redirect_to qualifications_url, notice: 'Qualification was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  private
+  def recover_values_for_qualitication
+    @clients = Client.order :name
+    @restaurants = Restaurant.order :name
   end
 
   private
