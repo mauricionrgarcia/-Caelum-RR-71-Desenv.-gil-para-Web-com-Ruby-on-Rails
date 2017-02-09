@@ -13,12 +13,17 @@
 
   <div class="field">
     <%= f.label :client_id %>
-    <%= f.number_field :client_id %>
+    <!-- <%= f.number_field :client_id %>-->
+    <%= select('qualification', 'client_id',
+                                 Client.order(:name){|p|
+                                   p
+                                 }
+    ) %>
   </div>
 
   <div class="field">
     <%= f.label :restaurant_id %>
-    <%= f.number_field :restaurant_id %>
+    <%= f.collection_select(:restaurant_id, Restaurant.order(:name), :id, :name, :prompt => true)%>
   </div>
 
   <div class="field">
