@@ -11,6 +11,9 @@
   <b>Specialty: </b>
   <%= @restaurant.specialty %>
 </p>
+<%= link_to "New Qualification", controller: "qualifications",
+                                 action: "new",
+                                 restaurant: @restaurant %>
 
 <%= link_to 'Back', action: 'index' %>
 <%= link_to 'Edit', action: 'edit', id: @restaurant %>

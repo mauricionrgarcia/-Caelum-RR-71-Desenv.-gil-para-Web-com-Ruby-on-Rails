@@ -12,13 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :client_id %>
-    <%= f.collection_select(:client_id, @clients, :id, :name, :prompt => true)%>
+    <% if @qualification.client %>
+      <%= f.hidden_field 'client_id' %>
+    <% else %>
+      <%= f.label :client_id %>
+      <%= f.collection_select(:client_id, @clients, :id, :name, :prompt => true)%>
+    <% end %>
+
   </div>
 
   <div class="field">
-    <%= f.label :restaurant_id %>
-    <%= f.collection_select(:restaurant_id, @restaurants, :id, :name, :prompt => true)%>
+    <% if @qualification.restaurant %>
+      <%= f.hidden_field 'restaurant_id' %>
+    <% else %>
+      <%= f.label :restaurant_id %>
+      <%= f.collection_select(:restaurant_id, @restaurants, :id, :name, :prompt => true)%>
+    <% end %>
   </div>
 
   <div class="field">

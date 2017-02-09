@@ -1,10 +1,17 @@
 class ClientsController < ApplicationController
   before_action :set_client, only: [:show, :edit, :update, :destroy]
 
+
+
   # GET /clients
   # GET /clients.json
   def index
     @clients = Client.all
+    respond_to do |format|
+      format.html
+      format.xml {render xml: @clients}
+      format.json {render json: @clients}
+    end
   end
 
   # GET /clients/1

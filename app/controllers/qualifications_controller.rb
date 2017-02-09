@@ -16,6 +16,13 @@ class QualificationsController < ApplicationController
   # GET /qualifications/new
   def new
     @qualification = Qualification.new
+    if params[:client]
+      @qualification.client=Client.find(params[:client])
+    end
+    if params[:restaurant]
+      @qualification.restaurant=Restaurant.find(params[:restaurant])
+    end
+
   end
 
   # GET /qualifications/1/edit

@@ -10,5 +10,9 @@
   <%= @client.years_old %>
 </p>
 
+<%= link_to "New Qualification", controller: "qualifications",
+                                 action: "new",
+                                 client: @client %>
+
 <%= link_to 'Edit', edit_client_path(@client) %> |
 <%= link_to 'Back', clients_path %>
