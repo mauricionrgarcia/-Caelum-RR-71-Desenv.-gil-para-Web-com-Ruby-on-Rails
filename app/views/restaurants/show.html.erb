@@ -7,10 +7,28 @@
   <b>Address:</b>
   <%= @restaurant.address %>
 </p>
+
 <p>
   <b>Specialty: </b>
   <%= @restaurant.specialty %>
 </p>
+
+<p>
+  <b>Average rating: </b>
+  <%= @restaurant.qualifications.average(:note) %>
+</p>
+
+<p>
+  <b>How many qualifications: </b>
+  <%= @restaurant.qualifications.count%>
+</p>
+
+<p>
+  <b>Average price: </b>
+  <%= @restaurant.qualifications.average(:amount_spent) %>
+</p>
+
+
 <%= link_to "New Qualification", controller: "qualifications",
                                  action: "new",
                                  restaurant: @restaurant %>
