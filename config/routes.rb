@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
+  resources :comments
   resources :qualifications
   resources :clients
   QualifyDish::Application.routes.draw do
+  resources :comments
   resources :qualifications
   resources :clients
     match 'hello' => 'hello_world#index', via: 'get'

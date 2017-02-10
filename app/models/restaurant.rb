@@ -4,6 +4,9 @@ class Restaurant < ApplicationRecord
   has_many :qualifications
   has_and_belongs_to_many :dishes
 
+  has_many :comments, :as => :commentable
+
+
   # Named Scopes
   #scope :pasta, where(specialty: 'pasta')
   scope :massas, -> {

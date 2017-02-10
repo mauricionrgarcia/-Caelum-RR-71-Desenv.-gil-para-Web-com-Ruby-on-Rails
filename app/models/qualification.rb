@@ -3,6 +3,8 @@ class Qualification < ApplicationRecord
   belongs_to :client
   belongs_to :restaurant
 
+  has_many :comments, :as => :commentable
+
   validates_presence_of :note, message: "note can't be blank"
   #validates_uniqueness_of :amount_spent, message: 'amount spent already registered'
 
