@@ -19,7 +19,7 @@
         <td><%= qualification.client.name %></td>
         <td><%= qualification.restaurant.name %></td>
         <td><%= qualification.note %></td>
-        <td><%= qualification.amount_spent %></td>
+        <td><%= formatted_value qualification.amount_spent %></td>
         <td><%= link_to 'Show', qualification %></td>
         <td><%= link_to 'Edit', edit_qualification_path(qualification) %></td>
         <td><%= link_to 'Destroy', qualification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
