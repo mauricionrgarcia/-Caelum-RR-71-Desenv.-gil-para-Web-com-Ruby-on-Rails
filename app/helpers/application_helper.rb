@@ -6,6 +6,10 @@ module ApplicationHelper
     delimiter: "."
   end
 
+  def menu(controllers)
+    render partial: "layouts/menu", locals: {options: controllers}
+  end
+
   def new_comment(commentable)
     render partial: "comments/new_comment_form", locals: {commentable: commentable}
   end
