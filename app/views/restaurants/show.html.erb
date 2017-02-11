@@ -28,6 +28,9 @@
   <%= @restaurant.qualifications.average(:amount_spent) %>
 </p>
 
+<%= comments @restaurant%>
+
+<%= new_comment @restaurant %>
 
 <%= link_to "New Qualification", controller: "qualifications",
                                  action: "new",
