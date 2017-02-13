@@ -1,25 +1,27 @@
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="" href="#">
-    <%= link_to("MyMovies", "/", class: 'navbar-brand') %>
-  </a>
+<header class="navbar navbar-light navbar-toggleable-md bd-navbar bg-faded">
+  <nav class="container">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="" href="#">
+      <%= link_to("Qualify Dish", "/", class: 'navbar-brand') %>
+    </a>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item <%= 'active' if params[:controller] == 'clients' %>" >
-        <%= link_to 'Clients', {controller: 'clients', action: 'index'}, class: 'nav-link' %>
-      </li>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item <%= 'active' if params[:controller] == 'clients' %>" >
+          <%= link_to 'Clients', {controller: 'clients', action: 'index'}, class: 'nav-link' %>
+        </li>
 
-      <li class="nav-item <%= 'active' if params[:controller] == 'restaurants' %>">
-        <%= link_to 'Restaurants', {controller: 'restaurants', action: 'index'}, class: 'nav-link' %>
-      </li>
+        <li class="nav-item <%= 'active' if params[:controller] == 'restaurants' %>">
+          <%= link_to 'Restaurants', {controller: 'restaurants', action: 'index'}, class: 'nav-link' %>
+        </li>
 
-      <li class="nav-item <%= 'active' if params[:controller] == 'qualifications' %>">
-        <%= link_to 'Qualifications', {controller: 'qualifications', action: 'index'}, class: 'nav-link' %>
-      </li>
+        <li class="nav-item <%= 'active' if params[:controller] == 'qualifications' %>">
+          <%= link_to 'Qualifications', {controller: 'qualifications', action: 'index'}, class: 'nav-link' %>
+        </li>
 
-    </ul>
-  </div>
-</nav>
+      </ul>
+    </div>
+  </nav>
+</header>
