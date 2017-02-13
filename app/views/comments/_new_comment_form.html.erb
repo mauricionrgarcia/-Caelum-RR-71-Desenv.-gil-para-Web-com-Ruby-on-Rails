@@ -5,10 +5,9 @@
   <%= f.hidden_field :commentable_id, value: commentable.id %>
   <%= f.hidden_field :commentable_type, value: commentable.class %>
 
-  <%= f.label :content %>
-  <%= f.text_area :content %>
+  <%= f.text_area :content, placeholder: :content, class: "form-control" %>
   <br />
-  <%= f.submit %>
+  <%= f.submit :class => "btn btn-primary" %>
 <% end %>
 </div>
 <br />

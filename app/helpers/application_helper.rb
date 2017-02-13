@@ -10,6 +10,10 @@ module ApplicationHelper
     render partial: "layouts/menu", locals: {options: controllers}
   end
 
+  def back_link
+    render partial: "pages/back_link" 
+  end
+
   def new_comment(commentable)
     render partial: "comments/new_comment_form", locals: {commentable: commentable}
   end

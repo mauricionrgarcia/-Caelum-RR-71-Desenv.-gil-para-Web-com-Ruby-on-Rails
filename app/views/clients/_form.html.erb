@@ -11,17 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <div class="form-group row">
+    <div class="col-xs-6 col-md-6 padding-tweak-left">
+    </div>
+    <div class="col-xs-6 col-md-6 padding-tweak-left">
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :years_old %>
-    <%= f.number_field :years_old %>
+  <div class="form-group">
+    <%= f.text_field :name, placeholder: :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group row col-xs-4 col-md-4 padding-tweak-left">
+    <%= f.number_field :years_old, placeholder: :years_old, class: 'form-control' %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => "btn btn-success" %>
+    <%= back_link %>
   </div>
 <% end %>

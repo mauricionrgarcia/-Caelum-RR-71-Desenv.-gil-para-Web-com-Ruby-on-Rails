@@ -1,3 +1,7 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Restaurants</h1>
+
 <table class="table">
   <tr>
     <th>Name</th>
@@ -11,19 +15,14 @@
       <td><%= r.address   %></td>
       <td><%= r.specialty %></td>
       <td>
-        <%= link_to 'Show', action: 'show', id: r %>
+        <%= link_to 'Show', {action: 'show', id: r}, class: 'btn btn-info' %>
       </td>
       <td>
-        <%= link_to 'Delete', {action: 'destroy', id: r},
-                              {method: 'delete' } %>
+        <%= link_to 'Edit', {action: 'edit', id: r}, class: 'btn btn-warning' %>
       </td>
-      <td>
-        <%= link_to 'Edit', action: 'edit', id: r %>
-      </td>
-
     </tr>
   <% end %>
 </table>
 
 <br />
-<%= link_to 'New', {action: 'new'} %>
+<%= link_to 'New Restaurant', new_restaurant_path, class: 'btn btn-success' %>

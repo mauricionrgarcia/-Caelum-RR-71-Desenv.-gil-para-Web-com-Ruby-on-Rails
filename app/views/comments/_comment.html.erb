@@ -1,4 +1,9 @@
-<p>
-  <%= comment.content %>
-  <%= link_to '(delete)', comment, method: :delete %>
-</P>
+<div class="row">
+  <div class="col-sm-12">
+    <p>
+      <%= comment.content %>
+      <%= link_to 'x', comment, method: :delete, style:"text-align:right;float: right;", class: 'btn btn-danger' %>
+    </p>
+    <hr />
+  </div>
+</div>

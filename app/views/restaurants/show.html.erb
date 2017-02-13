@@ -1,5 +1,4 @@
 <h1>
-  <p>Name: </p>
   <%= @restaurant.name %>
 </h1>
 
@@ -32,9 +31,10 @@
 
 <%= new_comment @restaurant %>
 
-<%= link_to "New Qualification", controller: "qualifications",
-                                 action: "new",
-                                 restaurant: @restaurant %>
 
-<%= link_to 'Back', action: 'index' %>
-<%= link_to 'Edit', action: 'edit', id: @restaurant %>
+<%= link_to "New Qualification", {controller: "qualifications",
+                                 action: "new",
+                                 restaurant: @restaurant},class: 'btn btn-success' %>
+
+<%= link_to 'Edit', edit_restaurant_path(@restaurant), class: 'btn btn-warning' %>
+<%= back_link %>
