@@ -2,7 +2,7 @@ class RestaurantsController < ApplicationController
   before_action :find_restaurant, only: [:show, :destroy, :edit, :update]
 
   def index
-    @restaurants = Restaurant.order :name
+    @restaurants = Restaurant.paginate(:page => params[:page], :per_page => 10)
 
     respond_to do |format|
       format.html

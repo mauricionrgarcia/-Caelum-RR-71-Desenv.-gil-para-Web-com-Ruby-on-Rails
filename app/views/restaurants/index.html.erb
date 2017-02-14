@@ -24,5 +24,10 @@
   <% end %>
 </table>
 
+
+<div class="pagination flickr_pagination">
+  <%= will_paginate @restaurants %>
+</div>
+
 <br />
 <%= link_to 'New Restaurant', new_restaurant_path, class: 'btn btn-success' %>

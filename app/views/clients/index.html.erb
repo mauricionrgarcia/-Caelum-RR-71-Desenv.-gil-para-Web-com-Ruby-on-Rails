@@ -24,6 +24,10 @@
   </tbody>
 </table>
 
+<div class="pagination flickr_pagination">
+  <%= will_paginate @clients %>
+</div>
+
 <br>
 
 <%= link_to 'New Client', new_client_path, class: 'btn btn-success' %>
