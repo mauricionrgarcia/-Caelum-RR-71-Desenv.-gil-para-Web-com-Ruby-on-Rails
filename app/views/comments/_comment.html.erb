@@ -1,9 +1,25 @@
 <div class="row">
   <div class="col-sm-12">
-    <p>
-      <%= comment.content %>
-      <%= link_to 'x', comment, method: :delete, style:"text-align:right;float: right;", class: 'btn btn-danger' %>
-    </p>
-    <hr />
+    <div id="div_comment_<%= comment.id %>">
+      <p id="comment_<%= comment.id %>">
+        <%= comment.content %>
+        <%= link_to 'x',
+            comment,
+            method: :delete,
+            remote: true,
+            id: "remove_comment_#{comment.id}",
+            style:"text-align:right;float: right;",
+            class: 'btn btn-danger' %>
+        </p>
+        <hr />
+    </div>
   </div>
 </div>
+
+<% content_for :js do %>
+  $('#remove_comment_<%= comment.id %>').bind('ajax:success',
+    function(){
+      $('#div_comment_<%= comment.id %>').remove();
+    }
+  );
+<% end %>
