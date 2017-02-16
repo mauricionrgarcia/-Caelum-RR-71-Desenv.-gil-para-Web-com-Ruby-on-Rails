@@ -63,6 +63,6 @@ class RestaurantsController < ApplicationController
   # => método que recupera os valores provenientes do formulario
   private
   def restaurant_params
-    params.require(:restaurant).permit(:name, :address, :specialty)
+    params.require(:restaurant).permit(:name, :address, :specialty, :picture)
   end
 end

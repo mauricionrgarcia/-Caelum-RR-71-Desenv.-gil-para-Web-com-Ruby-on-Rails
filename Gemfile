@@ -65,3 +65,6 @@ end
 
 # paginação
 gem "kaminari" #see https://github.com/kaminari/kaminari
+
+#upload/validação e tratamento de imagens
+gem 'paperclip'
