@@ -1,6 +1,6 @@
 <div>
 <p><b>New comment</b></p>
-<%= form_for Comment.new do |f| %>
+<%= form_for Comment.new, remote: true do |f| %>
 
   <%= f.hidden_field :commentable_id, value: commentable.id %>
   <%= f.hidden_field :commentable_type, value: commentable.class %>
@@ -11,3 +11,10 @@
 <% end %>
 </div>
 <br />
+
+<% content_for :js do %>
+  $('form').bind('ajax:complete', function(xhr, result){
+    $('#comments').replaceWith(result.responseText);
+    $('textarea').val("");
+  });
+<% end %>
