@@ -6,7 +6,7 @@ class ClientsController < ApplicationController
   # GET /clients
   # GET /clients.json
   def index
-    @clients = Client.paginate(:page => params[:page], :per_page => 10)
+    @clients = Client.page(params['page']).per(10)
     respond_to do |format|
       format.html
       format.xml {render xml: @clients}

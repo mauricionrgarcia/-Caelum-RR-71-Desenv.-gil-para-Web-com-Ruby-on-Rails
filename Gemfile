@@ -61,4 +61,7 @@ source 'https://rails-assets.org' do
 end
 
 #will_paginate is a pagination library that integrates with Ruby on Rails, Sinatra, Merb, DataMapper and Sequel.
-gem 'will_paginate', '~> 3.1.0'
+#gem 'will_paginate', '~> 3.1.0' => substituida pela kaminari
+
+# paginação
+gem "kaminari" #see https://github.com/kaminari/kaminari

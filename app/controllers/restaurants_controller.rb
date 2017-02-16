@@ -2,7 +2,8 @@ class RestaurantsController < ApplicationController
   before_action :find_restaurant, only: [:show, :destroy, :edit, :update]
 
   def index
-    @restaurants = Restaurant.paginate(:page => params[:page], :per_page => 10)
+    #@restaurants = Restaurant.paginate(:page => params[:page], :per_page => 10)
+    @restaurants = Restaurant.page(params['page']).per(10)
 
     respond_to do |format|
       format.html

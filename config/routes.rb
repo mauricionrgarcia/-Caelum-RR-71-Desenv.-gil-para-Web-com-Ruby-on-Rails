@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  #get '/' => 'pages#index'
+  root 'pages#index'
+
   resources :comments
   resources :qualifications
   resources :clients
