@@ -3,7 +3,7 @@
 </h1>
 
 <p>
-    <%= image_tag @restaurant.picture.url(:medium) %>
+    <%= image_tag @restaurant.picture.url(:medium) if @restaurant.picture.file? %>
 </p>
 
 <p>

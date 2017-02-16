@@ -43,7 +43,8 @@ class Restaurant < ApplicationRecord
   end
 
   has_attached_file :picture, styles:
-    { medium: "300x300>", thumb: "100x100>" }
+    { medium: "300x300>", thumb: "100x100>" },
+    :default_url => ":style/missing_picture_restaurant.jpg"
 
 
   validates_attachment_content_type :picture, :content_type => ['image/jpeg', 'image/jpg', 'image/png']
